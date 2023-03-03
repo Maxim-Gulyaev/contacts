@@ -1,5 +1,6 @@
-package android.maxim.contacts
+package android.maxim.contacts.activity
 
+import android.maxim.contacts.R
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
