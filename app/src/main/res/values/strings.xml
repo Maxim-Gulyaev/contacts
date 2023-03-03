@@ -5,4 +5,5 @@
     <string name="button_back">back</string>
     <string name="button_edit">edit</string>
     <string name="button_delete">delete</string>
+    <string name="tools_text">some text</string>
 </resources>
