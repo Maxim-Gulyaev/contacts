@@ -6,4 +6,6 @@
     <string name="button_edit">edit</string>
     <string name="button_delete">delete</string>
     <string name="tools_text">some text</string>
+    <string name="first_name">First name:</string>
+    <string name="last_name">Last name:</string>
 </resources>
