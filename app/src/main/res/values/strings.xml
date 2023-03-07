@@ -9,4 +9,6 @@
     <string name="tools_number">88000000000</string>
     <string name="first_name">First name:</string>
     <string name="last_name">Last name:</string>
+    <string name="button_cancel">cancel</string>
+    <string name="button_save">save</string>
 </resources>

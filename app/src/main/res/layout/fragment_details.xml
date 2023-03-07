@@ -27,7 +27,7 @@
             android:id="@+id/tv_show_phone_number"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            tools:text="@string/tools_text"
+            tools:text="@string/tools_number"
             style="@style/number_and_email"
             android:layout_marginStart="16dp"
             app:layout_constrainedWidth="true"
