@@ -11,4 +11,7 @@
     <string name="last_name">Last name:</string>
     <string name="button_cancel">cancel</string>
     <string name="button_save">save</string>
+    <string name="button_call">call</string>
+    <string name="button_send_sms">send sms</string>
+    <string name="btn_add_description">add contact</string>
 </resources>
