@@ -19,6 +19,7 @@ abstract class ContactsDatabase: RoomDatabase() {
                     INSTANCE = Room.databaseBuilder(context.applicationContext,
                     ContactsDatabase::class.java,
                     name = "contacts.db")
+                        .allowMainThreadQueries()
                         .build()
                 }
             }
