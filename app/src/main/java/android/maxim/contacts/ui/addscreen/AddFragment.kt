@@ -1,26 +1,23 @@
 package android.maxim.contacts.ui.addscreen
 
-
+import android.maxim.contacts.app.App
 import android.maxim.contacts.databinding.FragmentAddBinding
-import android.maxim.contacts.model.database.ContactDaoImpl
-import android.maxim.contacts.model.repository.Repository
 import android.maxim.contacts.navigator.navigator
-import android.maxim.contacts.viewmodels.AddViewModel
-import android.maxim.contacts.viewmodels.AddViewModelFactory
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import javax.inject.Inject
 
 class AddFragment: Fragment() {
 
     private lateinit var binding: FragmentAddBinding
-    private val repository = Repository(ContactDaoImpl())
-    //private val addViewModel: AddViewModel by viewModels()
-    //private val addViewModel: AddViewModel by viewModels { AddViewModelFactory(repository) }
     private lateinit var addViewModel: AddViewModel
+
+    @Inject
+    lateinit var factory: AddViewModelFactory
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,7 +25,8 @@ class AddFragment: Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        val factory = AddViewModelFactory(repository)
+        (requireActivity().application as App).appComponent.injectAddFragment(this)
+
         addViewModel = ViewModelProvider(this, factory)[AddViewModel::class.java]
 
         binding = FragmentAddBinding.inflate(layoutInflater)
@@ -39,7 +37,6 @@ class AddFragment: Fragment() {
     }
 
     private fun saveContact() {
-        //navigator().saveNewContact()
         addViewModel.contact.firstName = binding.etFirstName.text.toString()
         addViewModel.contact.lastName = binding.etLastName.text.toString()
         addViewModel.contact.phoneNumber = binding.etPhoneNumber.text.toString()

@@ -1,9 +1,11 @@
 package android.maxim.contacts.model.database
 
 import android.database.Cursor
+import javax.inject.Inject
+
 //Сделал временно, чтобы запустить AddFragment
 
-class ContactDaoImpl: ContactDao {
+class ContactDaoImpl @Inject constructor(): ContactDao {
     override fun insertContact(contact: Contact) {
         TODO("Not yet implemented")
     }

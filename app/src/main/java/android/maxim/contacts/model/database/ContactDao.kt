@@ -2,6 +2,7 @@ package android.maxim.contacts.model.database
 
 import android.database.Cursor
 import androidx.room.*
+import javax.inject.Inject
 
 @Dao
 interface ContactDao {

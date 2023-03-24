@@ -3,9 +3,10 @@ package android.maxim.contacts.model.repository
 import android.database.Cursor
 import android.maxim.contacts.model.database.Contact
 import android.maxim.contacts.model.database.ContactDao
+import javax.inject.Inject
 
 
-class Repository(private val contactDao: ContactDao) {
+class Repository @Inject constructor(private val contactDao: ContactDao) {
 
     fun insertContact(contact: Contact) {
         contactDao.insertContact(contact)
