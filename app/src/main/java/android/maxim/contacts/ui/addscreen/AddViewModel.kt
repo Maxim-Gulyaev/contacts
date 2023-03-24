@@ -1,4 +1,4 @@
-package android.maxim.contacts.viewmodels
+package android.maxim.contacts.ui.addscreen
 
 import android.maxim.contacts.model.database.Contact
 import android.maxim.contacts.model.repository.Repository

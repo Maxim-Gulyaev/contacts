@@ -1,8 +1,7 @@
-package android.maxim.contacts.fragments
+package android.maxim.contacts.ui.addscreen
 
 
 import android.maxim.contacts.databinding.FragmentAddBinding
-import android.maxim.contacts.model.database.ContactDao
 import android.maxim.contacts.model.database.ContactDaoImpl
 import android.maxim.contacts.model.repository.Repository
 import android.maxim.contacts.navigator.navigator

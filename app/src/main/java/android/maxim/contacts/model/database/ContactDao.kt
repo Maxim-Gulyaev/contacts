@@ -1,11 +1,6 @@
 package android.maxim.contacts.model.database
 
 import android.database.Cursor
-import android.maxim.contacts.viewmodels.AddViewModel
-import android.maxim.contacts.viewmodels.DetailsViewModel
-import android.maxim.contacts.viewmodels.EditViewModel
-import android.maxim.contacts.viewmodels.ListViewModel
-import androidx.lifecycle.LiveData
 import androidx.room.*
 
 @Dao

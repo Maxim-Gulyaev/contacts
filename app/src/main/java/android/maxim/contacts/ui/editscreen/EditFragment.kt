@@ -1,22 +1,22 @@
-package android.maxim.contacts.fragments
+package android.maxim.contacts.ui.editscreen
 
-import android.maxim.contacts.databinding.FragmentDetailsBinding
+import android.maxim.contacts.databinding.FragmentEditBinding
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 
-class DetailsFragment: Fragment() {
+class EditFragment: Fragment() {
 
-    private lateinit var binding: FragmentDetailsBinding
+    private lateinit var binding: FragmentEditBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentDetailsBinding.inflate(layoutInflater)
+        binding = FragmentEditBinding.inflate(layoutInflater)
         return binding.root
     }
 }

@@ -1,4 +1,4 @@
-package android.maxim.contacts.fragments
+package android.maxim.contacts.ui.listscreen
 
 import android.maxim.contacts.databinding.FragmentListBinding
 import android.maxim.contacts.navigator.navigator

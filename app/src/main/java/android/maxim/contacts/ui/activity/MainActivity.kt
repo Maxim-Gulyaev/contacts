@@ -1,9 +1,9 @@
-package android.maxim.contacts.activity
+package android.maxim.contacts.ui.activity
 
 import android.maxim.contacts.R
 import android.maxim.contacts.databinding.ActivityMainBinding
-import android.maxim.contacts.fragments.AddFragment
-import android.maxim.contacts.fragments.ListFragment
+import android.maxim.contacts.ui.addscreen.AddFragment
+import android.maxim.contacts.ui.listscreen.ListFragment
 import android.maxim.contacts.navigator.Navigator
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
