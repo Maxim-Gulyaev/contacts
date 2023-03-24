@@ -24,11 +24,3 @@ class AddViewModel (private val repository: Repository): ViewModel() {
     }
 }
 
-class AddViewModelFactory(private val repository: Repository) : ViewModelProvider.Factory {
-    override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(AddViewModel::class.java)) {
-            return AddViewModel(repository) as T
-        }
-        throw IllegalArgumentException("Unknown ViewModel class")
-    }
-}
