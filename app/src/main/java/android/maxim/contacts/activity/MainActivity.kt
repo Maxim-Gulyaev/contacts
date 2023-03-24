@@ -38,9 +38,9 @@ class MainActivity : AppCompatActivity(), Navigator {
         launchFragment(ListFragment())
     }
 
-    override fun saveNewContact() {
+   /* override fun saveNewContact() {
         TODO("Not yet implemented")
-    }
+    }*/
 
     override fun backToContactList() {
         TODO("Not yet implemented")
