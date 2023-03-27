@@ -43,6 +43,7 @@ class AddFragment: Fragment() {
         addViewModel.contact.email = binding.etMail.text.toString()
 
         addViewModel.addContact()
+        navigator().cancel()
     }
 
     private fun cancelAddition() {

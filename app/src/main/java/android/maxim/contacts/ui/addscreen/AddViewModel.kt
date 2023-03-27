@@ -3,7 +3,7 @@ package android.maxim.contacts.ui.addscreen
 import android.maxim.contacts.model.database.Contact
 import android.maxim.contacts.model.repository.Repository
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
+
 
 class AddViewModel (private val repository: Repository): ViewModel() {
 

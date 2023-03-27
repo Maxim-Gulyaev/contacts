@@ -2,6 +2,7 @@ package android.maxim.contacts.ui.activity
 
 import android.maxim.contacts.R
 import android.maxim.contacts.databinding.ActivityMainBinding
+import android.maxim.contacts.model.database.ContactsDatabase
 import android.maxim.contacts.ui.addscreen.AddFragment
 import android.maxim.contacts.ui.listscreen.ListFragment
 import android.maxim.contacts.navigator.Navigator
@@ -12,11 +13,14 @@ import androidx.fragment.app.Fragment
 class MainActivity : AppCompatActivity(), Navigator {
 
     private lateinit var binding: ActivityMainBinding
+    private var contactsDatabase: ContactsDatabase? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        contactsDatabase = ContactsDatabase.getInstance(applicationContext)
 
         if (savedInstanceState == null) {
             supportFragmentManager
