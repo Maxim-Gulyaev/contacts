@@ -1,8 +1,8 @@
 package android.maxim.contacts.app
 
 import android.app.Application
-import android.maxim.contacts.di.AppComponent
-import android.maxim.contacts.di.DaggerAppComponent
+import android.maxim.contacts.di.component.AppComponent
+import android.maxim.contacts.di.component.DaggerAppComponent
 
 class App: Application() {
 

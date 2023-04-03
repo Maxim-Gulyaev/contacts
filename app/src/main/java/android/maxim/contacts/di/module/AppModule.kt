@@ -1,4 +1,4 @@
-package android.maxim.contacts.di
+package android.maxim.contacts.di.module
 
 import android.app.Application
 import android.maxim.contacts.model.repository.Repository

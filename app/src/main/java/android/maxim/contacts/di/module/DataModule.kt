@@ -1,4 +1,4 @@
-package android.maxim.contacts.di
+package android.maxim.contacts.di.module
 
 import android.maxim.contacts.model.database.ContactDao
 import android.maxim.contacts.model.database.ContactDaoImpl
