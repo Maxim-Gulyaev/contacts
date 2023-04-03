@@ -3,6 +3,8 @@ package android.maxim.contacts.ui.addscreen
 import android.maxim.contacts.model.database.Contact
 import android.maxim.contacts.model.repository.Repository
 import androidx.lifecycle.ViewModel
+import io.reactivex.rxjava3.core.Observable
+import io.reactivex.rxjava3.schedulers.Schedulers
 
 
 class AddViewModel (private val repository: Repository): ViewModel() {
@@ -20,7 +22,9 @@ class AddViewModel (private val repository: Repository): ViewModel() {
     )
 
     fun addContact() {
-        repository.insertContact(contact)
+        Observable.just(contact)
+            .subscribeOn(Schedulers.io())
+            .subscribe {repository.insertContact(contact)}
     }
 }
 
