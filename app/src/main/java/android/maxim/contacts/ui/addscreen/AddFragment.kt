@@ -8,16 +8,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
-import javax.inject.Inject
+import androidx.fragment.app.viewModels
 
 class AddFragment: Fragment() {
 
     private lateinit var binding: FragmentAddBinding
-    private lateinit var addViewModel: AddViewModel
-
-    @Inject
-    lateinit var factory: AddViewModelFactory
+    private val addViewModel: AddViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -26,8 +22,6 @@ class AddFragment: Fragment() {
     ): View {
 
         (requireActivity().application as App).appComponent.injectAddFragment(this)
-
-        addViewModel = ViewModelProvider(this, factory)[AddViewModel::class.java]
 
         binding = FragmentAddBinding.inflate(layoutInflater)
 

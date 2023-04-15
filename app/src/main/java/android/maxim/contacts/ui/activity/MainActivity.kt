@@ -13,14 +13,14 @@ import androidx.fragment.app.Fragment
 class MainActivity : AppCompatActivity(), Navigator {
 
     private lateinit var binding: ActivityMainBinding
-    private var contactsDatabase: ContactsDatabase? = null
+    //private var contactsDatabase: ContactsDatabase? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        contactsDatabase = ContactsDatabase.getInstance(applicationContext)
+       //contactsDatabase = ContactsDatabase.getInstance(applicationContext)
 
         if (savedInstanceState == null) {
             supportFragmentManager

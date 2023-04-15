@@ -1,7 +1,8 @@
 package android.maxim.contacts.ui.addscreen
 
-import android.maxim.contacts.di.component.AppComponent
+import android.maxim.contacts.app.App
 import android.maxim.contacts.di.component.DaggerAppComponent
+import android.maxim.contacts.di.module.AppModule
 import android.maxim.contacts.model.database.Contact
 import android.maxim.contacts.model.repository.Repository
 import androidx.lifecycle.ViewModel
@@ -10,15 +11,20 @@ import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.schedulers.Schedulers
 import javax.inject.Inject
 
-class AddViewModel (private val repository: Repository): ViewModel() {
+class AddViewModel (/*private val repository: Repository*/): ViewModel() {
 
-    private val appComponent: AppComponent = DaggerAppComponent.create()
-    private val viewModelComponent = appComponent
-        .viewModelComponent()
-        .injectAddViewModel(this)
+    init {
+        val appComponent = DaggerAppComponent.builder()
+            .appModule(AppModule(App().getAppContext()))
+            .build()
+        appComponent.injectAddViewModel(this)
+    }
 
     @Inject
     lateinit var compositeDisposable: CompositeDisposable
+
+    @Inject
+    lateinit var repository: Repository
 
     private var firstName: String = ""
     private var lastName: String = ""

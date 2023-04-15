@@ -11,6 +11,7 @@ abstract class ContactsDatabase: RoomDatabase() {
     abstract fun contactDao(): ContactDao
 
     companion object {
+
         private var INSTANCE: ContactsDatabase? = null
 
         fun getInstance(context: Context):ContactsDatabase? {
