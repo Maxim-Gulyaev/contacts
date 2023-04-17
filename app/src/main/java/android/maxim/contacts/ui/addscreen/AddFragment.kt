@@ -1,6 +1,5 @@
 package android.maxim.contacts.ui.addscreen
 
-import android.maxim.contacts.app.App
 import android.maxim.contacts.databinding.FragmentAddBinding
 import android.maxim.contacts.navigator.navigator
 import android.os.Bundle
@@ -20,8 +19,6 @@ class AddFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
-        (requireActivity().application as App).appComponent.injectAddFragment(this)
 
         binding = FragmentAddBinding.inflate(layoutInflater)
 

@@ -14,7 +14,7 @@ import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.core.Single
 import javax.inject.Inject
 
-class Repository @Inject constructor(/*private val contactDao: ContactDao*/) {
+class Repository @Inject constructor() {
 
     @Inject
     lateinit var context: Application

@@ -14,8 +14,6 @@ interface Navigator {
 
     fun cancel()
 
-    //fun saveNewContact()
-
     fun backToContactList()
 
     fun editContact()

@@ -11,7 +11,7 @@ import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.schedulers.Schedulers
 import javax.inject.Inject
 
-class AddViewModel (/*private val repository: Repository*/): ViewModel() {
+class AddViewModel: ViewModel() {
 
     init {
         val appComponent = DaggerAppComponent.builder()
