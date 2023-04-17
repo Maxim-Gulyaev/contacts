@@ -1,10 +1,8 @@
 package android.maxim.contacts.ui.listscreen
 
-import android.maxim.contacts.app.App
 import android.maxim.contacts.databinding.FragmentListBinding
 import android.maxim.contacts.navigator.navigator
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 
 class ListFragment: Fragment() {
 
@@ -26,15 +25,14 @@ class ListFragment: Fragment() {
     ): View {
         binding = FragmentListBinding.inflate(layoutInflater)
 
-        (requireActivity().application as App).appComponent.injectListFragment(this)
-
         recyclerView = binding.recyclerview
         recyclerView.layoutManager = LinearLayoutManager(context)
-        recyclerView.adapter = RecyclerAdapter(listViewModel.getContactList())
+        //TODO: Find way to dispose it.
+        listViewModel.getContactList()
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe { it -> recyclerView.adapter = RecyclerAdapter(it) }
 
         binding.btnAddContact.setOnClickListener { addContact() }
-
-        Log.d("tag", "fragment")
 
         return binding.root
     }

@@ -9,11 +9,12 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 
-class RecyclerAdapter(private val contacts: List<Contact>):
+class RecyclerAdapter (private val contacts: List<Contact>):
     RecyclerView.Adapter<RecyclerAdapter.ListViewHolder>() {
 
     class ListViewHolder(itemView: View): ViewHolder(itemView) {
-        val contactView = itemView.findViewById<TextView>(R.id.tv_contact_name)
+        val contactFirstNameView = itemView.findViewById<TextView>(R.id.tv_contact_first_name)
+        val contactLastNameView = itemView.findViewById<TextView>(R.id.tv_contact_last_name)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
@@ -25,7 +26,9 @@ class RecyclerAdapter(private val contacts: List<Contact>):
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
         val contact = contacts[position]
-        holder.contactView.text = contact.firstName
+        holder.contactFirstNameView.text = contact.firstName
+        holder.contactLastNameView.text = contact.lastName
+
     }
 
     override fun getItemCount(): Int {

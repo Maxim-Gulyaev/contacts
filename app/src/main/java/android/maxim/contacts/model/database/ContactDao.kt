@@ -9,6 +9,8 @@ import javax.inject.Inject
 @Dao
 interface ContactDao {
 
+    //TODO: Make contacts placing in an alphabetical order
+
     @Insert(onConflict = OnConflictStrategy.ABORT)
     fun insertContact(contact: Contact)
 

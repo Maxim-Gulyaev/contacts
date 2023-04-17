@@ -6,7 +6,10 @@ import android.maxim.contacts.di.module.AppModule
 import android.maxim.contacts.model.database.Contact
 import android.maxim.contacts.model.repository.Repository
 import androidx.lifecycle.ViewModel
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
+import io.reactivex.rxjava3.core.Single
 import io.reactivex.rxjava3.disposables.CompositeDisposable
+import io.reactivex.rxjava3.schedulers.Schedulers
 import javax.inject.Inject
 
 class ListViewModel: ViewModel() {
@@ -20,38 +23,16 @@ class ListViewModel: ViewModel() {
 
     @Inject
     lateinit var compositeDisposable: CompositeDisposable
-
     @Inject
     lateinit var repository: Repository
+    lateinit var listContacts: List<Contact>
 
-
-    var listContacts: List<Contact> = getContactList()
-
-    fun getContactList(): List<Contact> {
-        //this returns null
-           /* repository.getContact()
-                .subscribeOn(Schedulers.io())
-                .map { it -> listContacts = it }
-        return listContacts*/
-        //hardcoded it temporary
-        val listContact = listOf(
-            Contact(null, "aaa", "bbb","333", "ccc"),
-            Contact(null,"bbb","bbb","333","bbb"))
-        return listContact
+    //TODO: Find way to dispose it.
+    fun getContactList(): Single<List<Contact>> {
+        return repository.getContact()
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .flatMap { Single.just(it) }
+            .doOnSuccess { listContacts = it }
     }
-
-    /*fun getContactList(): Single<List<Contact>> {
-        return repository.getContact()
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-    }*/
-
-    /*fun getContactList(): List<Contact> {
-        return repository.getContact()
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .blockingGet()
-    }*/
-
-
 }
